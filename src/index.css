@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-brand-primary: #E87512;
+  --color-brand-dark: #C96009;
+  --color-brand-light: #FDF3E7;
+  --color-charcoal: #242424;
+}
+
+@layer base {
+  *, ::before, ::after {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html, body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #242424;
+    background-color: #FFFFFF;
+  }
+
+  button, input, select, textarea, optgroup, option {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Specific font-mono override strictly for raw barcode digits and tabular numerals */
+  .font-mono, [data-mono] {
+    font-family: 'JetBrains Mono', monospace !important;
+  }
+}
+
+/* Print-specific CSS for thermal receipts and invoices */
+@media print {
+  @page {
+    margin: 5mm;
+    size: 80mm auto;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #thermal-receipt-print-area,
+  #thermal-receipt-print-area * {
+    visibility: visible;
+  }
+  #thermal-receipt-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 78mm;
+    margin: 0;
+    padding: 0;
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

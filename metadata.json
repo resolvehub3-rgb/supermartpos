@@ -1,0 +1,6 @@
+{
+  "name": "Afrimart POS - Multi-Tenant Supermarket SaaS",
+  "description": "Enterprise multi-tenant supermarket Point of Sale SaaS platform with real-time checkout, barcode scanner, inventory control, cashier shifts, and platform management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
